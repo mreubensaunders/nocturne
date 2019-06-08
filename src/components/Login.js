@@ -1,4 +1,4 @@
-/* @flow */
+//@flow
 import React, {useState} from 'react';
 import { useMutation } from 'urql';
 import Loading from './Loading';

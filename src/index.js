@@ -39,8 +39,18 @@ const reducer = (state, action) => {
 
 ReactDOM.render(<StateProvider initialState={initialState} reducer={reducer}> 
                     <Provider value={client}>
-                    <Router>
-                        <Switch>
+                    <Router>  
+                    <nav className="pa3 pa4-ns">    
+                        <NavLink
+                            className="link dim f6 f5-ns dib mr3 black"
+                            activeClassName="pink"
+                            exact={true}
+                            to="/login"
+                            title="login">
+                            login
+                        </NavLink> 
+                    </nav>
+                    <Switch>
                         <Route exact path="/" component={App} />
                         <Route exact path="/login" component={Login} />
                     </Switch>

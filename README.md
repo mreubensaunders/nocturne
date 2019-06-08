@@ -1,4 +1,4 @@
-# nocturne
+# nocturne 🌘
 
 my starter project w/ everything i need (urlql, flow, react-anime, react-router)
 

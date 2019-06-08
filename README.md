@@ -1,6 +1,8 @@
 # nocturne 🌘
 
-my starter project w/ everything i need (urlql, flow, react-anime, react-router)
+my starter project w/ everything i need (urql, flow, react-anime, react-router)
+
+using hooks & apicontext for state management (see AppState.js)
 
 ### Installing
 

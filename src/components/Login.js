@@ -39,37 +39,26 @@ const Login = () => {
   //   return 'oh no ' + res.error
 
   return (    
-    <main className="pa4 black-80">      
+    <form className="pa4 black-80">
       {res.fetching ? <Loading/> : <span>{log(res.data)}</span>}
-      
-      <form className="measure center">
-      <fieldset id="sign_up" className="ba b--transparent ph0 mh0">
-        <legend className="f4 fw6 ph0 mh0">Sign In</legend>
-        <div className="mt3">
-          <label className="db fw6 lh-copy f6">username</label>
-          <input className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
-          value={_email}
-          onChange={e => setEmail(e.target.value)}
-          type="email"/>
-        </div>
-        <div className="mv3">
-          <label className="db fw6 lh-copy f6">password</label>
-          <input className="b pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" 
-          value={_password}
-          onChange={e => setPassword(e.target.value)}
-          type="password"/>
-        </div>      
-      </fieldset>
-      <div className="">
-        <a className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib" onClick={handleClick}><i className="fas fa-sign-in-alt"></i></a>
+      <div className="measure">
+        <label for="name" className="f6 b db mb2"><span className="normal black-60">username</span></label>
+        <input id="name" className="input-reset ba b--black-20 pa2 mb2 db w-100" type="text" 
+        value={_email}
+        onChange={e => setEmail(e.target.value)}
+        aria-describedby="name-desc"/>
+          <label for="name" className="f6 b db mb2"><span className="normal black-60">password</span></label>
+        <input id="name" className="input-reset ba b--black-20 pa2 mb2 db w-100" type="text" 
+        value={_password}
+        onChange={e => setPassword(e.target.value)}
+        aria-describedby="name-desc"/>
+        <div className="">
+            <a className="f6 link dim ba ph3 pv2 mb2 dib hot-pink" href="#0" onClick={handleClick}><i className="fas fa-sign-in-alt"></i></a>
+            {/* <a className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib" onClick={handleClick}><i className="fas fa-sign-in-alt"></i></a> */}
+          </div>
+        <small id="name-desc" className="f6 black-60 db mb2">{res.error && 'oops ' + res.error}</small>
       </div>
-      <div className="lh-copy mt3">
-        <span>{res.error && 'oops ' + res.error}</span>
-        {/* <a href="#0" className="f6 link dim black db">Sign up</a>
-        <a href="#0" className="f6 link dim black db">Forgot your password?</a> */}
-      </div>
-    </form>
-  </main>    
+  </form>
   );
 };
 

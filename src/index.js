@@ -40,7 +40,15 @@ const reducer = (state, action) => {
 ReactDOM.render(<StateProvider initialState={initialState} reducer={reducer}> 
                     <Provider value={client}>
                     <Router>  
-                    <nav className="pa3 pa4-ns">    
+                    <nav className="pa3 pa4-ns"> 
+                        <NavLink
+                            className="link dim f6 f5-ns dib mr3 black"
+                            activeClassName="pink"
+                            exact={true}
+                            to="/"
+                            title="home">
+                            home
+                        </NavLink>    
                         <NavLink
                             className="link dim f6 f5-ns dib mr3 black"
                             activeClassName="pink"

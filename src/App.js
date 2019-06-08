@@ -15,6 +15,11 @@ const List = ({data}) => {
   )
 }
 
+const Page = () => (
+  <>
+  </>
+);
+
 const App = () => {
 
   const [result] = useQuery({

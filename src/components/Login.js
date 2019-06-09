@@ -2,7 +2,7 @@
 import React, {useState} from 'react';
 import { useMutation } from 'urql';
 import Loading from './Loading';
-import Error from './Error';
+import Alert from './Alert';
 import {
   NavLink,
   Redirect
@@ -65,7 +65,7 @@ const Login = () => {
                     title="signup">
                     new customer?
                 </NavLink>
-                {res.error && <Error message={res.error}></Error>}
+                {res.error && <Alert message={res.error} type={"error"}/>}
         {/* <small id="name-desc" className="f6 red db mb2">{res.error && '' + res.error}</small> */}
       </div>
   </form>

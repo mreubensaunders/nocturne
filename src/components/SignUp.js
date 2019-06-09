@@ -2,13 +2,13 @@
 import React, {useState} from 'react';
 import { useMutation } from 'urql';
 import Loading from './Loading';
-import Error from './Error';
+import Alert from './Alert';
 import {
   Redirect
 } from 'react-router-dom'
 
 const SignUpQuery = `
-mutation($email: String!, $name: String!, $password: String!) {
+mutation($email: String!, $name: String!, $password: String!, $posts: Object!) {
   signup(email: $email, name: $name, password: $password) {
     token
   }
@@ -67,7 +67,7 @@ const SignUp = () => {
             <a className="f6 link dim ba ph3 pv2 mb2 mt2 dib pink pointer" onClick={handleClick}><i class="fas fa-user-plus"></i></a>
             {/* <a className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib" onClick={handleClick}><i className="fas fa-sign-in-alt"></i></a> */}
           </div>
-          {res.error && <Error message={res.error}/>}
+          {res.error && <Alert message={res.error}/>}
       </div>
   </form>
   );

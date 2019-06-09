@@ -44,6 +44,7 @@ yarn flow stop
 * [urlql](https://github.com/FormidableLabs/urql) - GraphQL client
 * [anime.js](https://animejs.com/) - animation library
 * [flow](https://flow.org/) - type checker
+- [tachyons](https://tachyons.io/) - lightweight/responsive css library
 
 ## Authors
 
@@ -52,4 +53,3 @@ yarn flow stop
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-

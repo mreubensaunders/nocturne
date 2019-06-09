@@ -44,11 +44,11 @@ yarn flow stop
 * [urlql](https://github.com/FormidableLabs/urql) - GraphQL client
 * [anime.js](https://animejs.com/) - animation library
 * [flow](https://flow.org/) - type checker
-- [tachyons](https://tachyons.io/) - lightweight/responsive css library
+* [tachyons](https://tachyons.io/) - lightweight/responsive css library
 
 ## Authors
 
-* **Michael Saunders** - *Initial work* - [arcaneflorist]https://github.com/arcaneflorist
+* **Michael Saunders** - *Initial work* - [arcaneflorist](https://github.com/arcaneflorist)
 
 ## License
 

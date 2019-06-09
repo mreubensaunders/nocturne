@@ -1,7 +1,19 @@
-import React from 'react';
-import Anime from 'react-anime';
+import React, { useEffect } from 'react';
+import anime from 'animejs';
 
 export default function Loading() {
+
+    console.log(anime);
+
+    useEffect(() => {
+        anime({              
+            targets: '.rs-load',  
+            width: '100%', // -> from '0px' to '100%',
+            easing: 'easeInOutQuad',
+            direction: '',
+            loop: true
+        })
+    })
 
     const style = {        
         margin: 0,
@@ -15,16 +27,9 @@ export default function Loading() {
         display: 'block'                 
     }
 
-    let animeProps = {                
-        width: '100%', // -> from '0px' to '100%',
-        easing: 'easeInOutQuad',
-        direction: '',
-        loop: true
-    }
-
     return(
-        <Anime  {...animeProps}>
-            <div style={style} className="rs-load"></div>   
-        </Anime>
+        <>
+            <div style={style} id="id" className="rs-load"></div>           
+        </>
     )
 }

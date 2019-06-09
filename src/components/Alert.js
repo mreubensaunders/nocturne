@@ -1,6 +1,5 @@
 // @flow
 import React, { useState } from 'react';
-import Anime from 'react-anime';
 
 function getColor(type: "success" | "info" | "error") : string { //<- example of flow type checking
   switch (type) {

@@ -3,6 +3,7 @@ import React, {useState} from 'react';
 import { useMutation } from 'urql';
 import Loading from './Loading';
 import Alert from './Alert';
+import { useStateValue  } from '../AppState';
 import {
   NavLink,
   Redirect
@@ -16,6 +17,8 @@ mutation($email: String!, $password: String!) {
 }`;
 
 const Login = () => {
+  
+  const [{ token }, dispatch] = useStateValue();
 
   const [res, executeMutation] = useMutation(LoginQuery);
   const [success, setSuccess] = useState(false);
@@ -28,8 +31,13 @@ const Login = () => {
 
   const log = response => {
     if(response != undefined){
+      const jwtToken = response.login.token;
       setSuccess(true)
-      console.log('jwt: ' + response.login.token)      
+      dispatch({
+                type: 'setToken',
+                newToken: jwtToken
+              })
+      console.log('jwt: ' + jwtToken)      
     }
   }
 
@@ -63,7 +71,7 @@ const Login = () => {
                     exact={true}
                     to="/signup"
                     title="signup">
-                    new customer?
+                    Sign Up
                 </NavLink>
                 {res.error && <Alert message={res.error}/>}
         {/* <small id="name-desc" className="f6 red db mb2">{res.error && '' + res.error}</small> */}

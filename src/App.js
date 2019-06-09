@@ -1,11 +1,12 @@
+// @flow
 import React from 'react';
 import './App.css';
 import Loading from './components/Loading.js';
-import Error from './components/Error.js';
+import Alert from './components/Alert.js';
 
 import { useQuery } from 'urql';
 
-const List = ({data}) => {
+const List = ({data}) : Object => {
   return(
     <div className="pa3 pa5-ns">
       <ul className="list pl0 measure center">
@@ -31,7 +32,7 @@ const App = () => {
 
   const { fetching, data, error } = result;
   if(error)
-    return <Error message={error}/>;
+    return <Alert message={error}/>;
 
   return fetching ? <Loading/> : <> <List data={data.feed}/> </>;
 };

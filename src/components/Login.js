@@ -65,7 +65,7 @@ const Login = () => {
                     title="signup">
                     new customer?
                 </NavLink>
-                {res.error && <Alert message={res.error} type={"error"}/>}
+                {res.error && <Alert message={res.error}/>}
         {/* <small id="name-desc" className="f6 red db mb2">{res.error && '' + res.error}</small> */}
       </div>
   </form>

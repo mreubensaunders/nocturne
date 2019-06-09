@@ -64,7 +64,7 @@ const SignUp = () => {
         onChange={e => setPassword(e.target.value)}
         aria-describedby="name-desc"/>
         <div className="">
-            <a className="f6 link dim ba ph3 pv2 mb2 mt2 dib pink pointer" onClick={handleClick}><i class="fas fa-user-plus"></i></a>
+            <a className="f6 link dim ba ph3 pv2 mb2 mt2 dib pink pointer" onClick={handleClick}><i className="fas fa-user-plus"></i></a>
             {/* <a className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib" onClick={handleClick}><i className="fas fa-sign-in-alt"></i></a> */}
           </div>
           {res.error && <Alert message={res.error}/>}

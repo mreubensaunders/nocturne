@@ -1,5 +1,6 @@
 // @flow
 import React, { useState } from 'react';
+import Anime from 'react-anime';
 
 function getColor(type: "success" | "info" | "error") : string { //<- example of flow type checking
   switch (type) {
@@ -12,18 +13,15 @@ function getColor(type: "success" | "info" | "error") : string { //<- example of
 
 export default function Alert(message : Object) {
 
-    const [hide : boolean, setHide] = useState(false);
-
-    const handleClick = () => {
-        console.log('click');
-    };
+    const [hide, setHide] = useState(false);
+    console.log(message.message);
 
     return(
         <div hidden={hide} className="pl0 measure center">
             <div className="flex items-center justify-center pa4 error relative" style={{backgroundColor: getColor(message.type)}}>     
                 <a className="close" onClick={() => {setHide(true)}}><i className="fas fa-times"/></a>        
                 <title>error</title>                    
-            <span className="lh-title white">{'' + message.message}</span>
+            <span className="lh-title white">{message.message.message}</span>
             </div>
         </div>
     )

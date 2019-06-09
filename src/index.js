@@ -1,13 +1,12 @@
-import React, {Fragment} from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import Login from './components/Login';
+import SignUp from './components/SignUp';
 import Nav from './components/Nav';
 //import * as serviceWorker from './serviceWorker';
 import {
-    NavLink,
-    Link,
     BrowserRouter as Router,
     Route,
     Switch,
@@ -45,6 +44,7 @@ ReactDOM.render(<StateProvider initialState={initialState} reducer={reducer}>
                     <Switch>
                         <Route exact path="/" component={App} />
                         <Route exact path="/login" component={Login} />
+                        <Route exact path="/signup" component={SignUp} />
                     </Switch>
                     </Router>
                     </Provider>

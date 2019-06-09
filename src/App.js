@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import Loading from './components/Loading.js';
+import Error from './components/Error.js';
 
 import { useQuery } from 'urql';
 
@@ -28,7 +29,10 @@ const App = () => {
                      content } }`,
   });
 
-  const { fetching, data } = result;
+  const { fetching, data, error } = result;
+  if(error)
+    return <Error message={error}/>;
+
   return fetching ? <Loading/> : <> <List data={data.feed}/> </>;
 };
 

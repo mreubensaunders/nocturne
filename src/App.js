@@ -1,9 +1,10 @@
 // @flow
 import React from 'react';
-import './App.css';
+//import './App.css';
 import Loading from './components/Loading.js';
 import Alert from './components/Alert.js';
 
+import { useStateValue } from './AppState.js';
 import { useQuery } from 'urql';
 
 const List = ({data}) : Object => {
@@ -24,6 +25,8 @@ const List = ({data}) : Object => {
 
 const App = () => {
 
+  const [{ token }] = useStateValue();
+
   const [result] = useQuery({
     query: `{ feed { id
                      title
@@ -34,7 +37,7 @@ const App = () => {
   if(error)
     return <Alert message={error}/>;
 
-  return fetching ? <Loading/> : <> <List data={data.feed}/> </>;
+  return fetching ? <Loading/> : <> { token != null && <Alert message={{message: 'JWT Token: ' + token}} type="success"/> } <List data={data.feed}/> </>;
 };
 
 export default App;

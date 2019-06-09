@@ -23,6 +23,11 @@ body .error .close .fa-times {
   font-size: 2em;
 }
 
+body .error-msg {
+  font-size: 10px;
+  overflow: -webkit-paged-x;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }

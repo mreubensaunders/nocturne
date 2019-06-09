@@ -14,22 +14,22 @@ import {
 import 'tachyons';
 
 import { Provider, createClient } from 'urql';
-import {StateProvider} from './AppState';
+import { StateProvider, useStateValue } from './AppState';
 
 const client = createClient({
   url: 'http://localhost:4000/', // Your GraphQL endpoint here
 });
 
 const initialState = {
-    theme: { primary: 'white' }
+    token: null
 };
   
 const reducer = (state, action) => {
     switch (action.type) {
-        case 'changeTheme':
+        case 'setToken':
         return {
             ...state,
-            theme: action.newTheme
+            token: action.newToken
         };
         
         default:
@@ -41,6 +41,7 @@ ReactDOM.render(<StateProvider initialState={initialState} reducer={reducer}>
                     <Provider value={client}>
                     <Router>                      
                     <Nav/>
+                    
                     <Switch>
                         <Route exact path="/" component={App} />
                         <Route exact path="/login" component={Login} />

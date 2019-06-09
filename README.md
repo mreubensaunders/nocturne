@@ -1,6 +1,6 @@
 # nocturne 🌘
 
-my starter project w/ everything i need (urql, flow, react-anime, react-router)
+my starter project w/ everything i need (urql, flow, animejs, react-router)
 
 using hooks & apicontext for state management (see AppState.js)
 
@@ -41,9 +41,9 @@ yarn flow stop
 
 ## Built With
 
-* [urlql](https://github.com/FormidableLabs/urql) - GraphQL client
-* [anime.js](https://animejs.com/) - animation library
-* [flow](https://flow.org/) - type checker
+* [urlql](https://github.com/FormidableLabs/urql) - graphql client
+* [anime.js](https://animejs.com/) - javascript animation engine
+* [flow](https://flow.org/) - javascript type checker
 * [tachyons](https://tachyons.io/) - lightweight/responsive css library
 
 ## Authors

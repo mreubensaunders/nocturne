@@ -8,10 +8,10 @@ export default function Loading() {
         position: 'fixed',
         top: 0,
         left: 0,
-        height: 3,
+        height: 2,
         width: 0,
         letterSpacing: '0.2em',
-        backgroundColor: 'blue',
+        backgroundColor: 'aquamarine',
         display: 'block'                 
     }
 

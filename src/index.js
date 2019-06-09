@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import Login from './components/Login';
+import Nav from './components/Nav';
 //import * as serviceWorker from './serviceWorker';
 import {
     NavLink,
@@ -39,25 +40,8 @@ const reducer = (state, action) => {
 
 ReactDOM.render(<StateProvider initialState={initialState} reducer={reducer}> 
                     <Provider value={client}>
-                    <Router>  
-                    <nav className="pa3 pa4-ns"> 
-                        <NavLink
-                            className="link dim f6 f5-ns dib mr3 black"
-                            activeClassName="pink"
-                            exact={true}
-                            to="/"
-                            title="home">
-                            home
-                        </NavLink>    
-                        <NavLink
-                            className="link dim f6 f5-ns dib mr3 black"
-                            activeClassName="pink"
-                            exact={true}
-                            to="/login"
-                            title="login">
-                            login
-                        </NavLink> 
-                    </nav>
+                    <Router>                      
+                    <Nav/>
                     <Switch>
                         <Route exact path="/" component={App} />
                         <Route exact path="/login" component={Login} />

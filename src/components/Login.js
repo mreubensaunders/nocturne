@@ -39,21 +39,21 @@ const Login = () => {
   //   return 'oh no ' + res.error
 
   return (    
-    <form className="pa4 black-80">
+    <form className="pa3 pa5-ns">
       {res.fetching ? <Loading/> : <span>{log(res.data)}</span>}
-      <div className="measure">
+      <div className="pl0 measure center">
         <label for="name" className="f6 b db mb2"><span className="normal black-60">username</span></label>
         <input id="name" className="input-reset ba b--black-20 pa2 mb2 db w-100" type="text" 
         value={_email}
         onChange={e => setEmail(e.target.value)}
         aria-describedby="name-desc"/>
           <label for="name" className="f6 b db mb2"><span className="normal black-60">password</span></label>
-        <input id="name" className="input-reset ba b--black-20 pa2 mb2 db w-100" type="text" 
+        <input id="name" className="input-reset ba b--black-20 pa2 mb2 db w-100" type="password" 
         value={_password}
         onChange={e => setPassword(e.target.value)}
         aria-describedby="name-desc"/>
         <div className="">
-            <a className="f6 link dim ba ph3 pv2 mb2 dib hot-pink" href="#0" onClick={handleClick}><i className="fas fa-sign-in-alt"></i></a>
+            <a className="f6 link dim ba ph3 pv2 mb2 mt2 dib pink" onClick={handleClick}><i className="fas fa-sign-in-alt"></i></a>
             {/* <a className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib" onClick={handleClick}><i className="fas fa-sign-in-alt"></i></a> */}
           </div>
         <small id="name-desc" className="f6 black-60 db mb2">{res.error && 'oops ' + res.error}</small>

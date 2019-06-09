@@ -6,52 +6,30 @@ import { useQuery } from 'urql';
 
 const List = ({data}) => {
   return(
-    <ul>      
+    <div className="pa3 pa5-ns">
+      <ul className="list pl0 measure center">
       {data &&
             data.map(post => (
-              <li key={post.id}>{post.title}</li>
+              <li className="lh-copy pv3 ba bl-0 bt-0 br-0 b--dotted b--black-30" key={post.id}>{post.title}
+              <br></br>
+              <a href={post.content}>{post.content}</a>
+              </li>
             ))}
-    </ul>
+      </ul>
+    </div>
   )
 }
-
-const Page = () => (
-  <>
-  </>
-);
 
 const App = () => {
 
   const [result] = useQuery({
     query: `{ feed { id
-                     title } }`,
+                     title
+                     content } }`,
   });
 
   const { fetching, data } = result;
-  return fetching ? <Loading/> : <List data={data.feed} />;
+  return fetching ? <Loading/> : <> <List data={data.feed}/> </>;
 };
 
 export default App;
-
-// function App() {
-//   return (
-//     <div className="App">
-//       <header className="App-header">
-//         <img src={logo} className="App-logo" alt="logo" />
-//         <p>
-//           Edit <code>src/App.js</code> and save to reload.
-//         </p>
-//         <a
-//           className="App-link"
-//           href="https://reactjs.org"
-//           target="_blank"
-//           rel="noopener noreferrer"
-//         >
-//           Learn React
-//         </a>
-//       </header>
-//     </div>
-//   );
-// }
-
-// export default App;

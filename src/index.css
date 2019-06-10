@@ -25,10 +25,9 @@ body .error .close .fa-times {
 
 body .error-msg {
   font-size: 10px;
-  overflow: -webkit-paged-x;
+  word-break: break-all;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
-/*# sourceMappingURL=index.css.map */

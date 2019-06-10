@@ -23,7 +23,7 @@ export default function Loading() {
         height: 2,
         width: 0,
         letterSpacing: '0.2em',
-        backgroundColor: 'aquamarine',
+        backgroundColor: "#2cb673",
         display: 'block'                 
     }
 

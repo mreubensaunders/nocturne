@@ -16,6 +16,7 @@ mutation($email: String!, $password: String!) {
   }
 }`;
 
+
 const Login = () => {
   
   const [{ token }, dispatch] = useStateValue();
@@ -44,9 +45,6 @@ const Login = () => {
   if(success)
     return <Redirect to='/'></Redirect>
 
-  // if(res.error)
-  //   return 'oh no ' + res.error
-
   return (    
     <form className="pa3 pa5-ns">
       {res.fetching ? <Loading/> : <span>{log(res.data)}</span>}
@@ -62,12 +60,12 @@ const Login = () => {
         onChange={e => setPassword(e.target.value)}
         aria-describedby="name-desc"/>
         <div className="">
-            <a className="f6 link dim ba ph3 pv2 mb2 mt2 dib pink pointer" onClick={handleClick}><i className="fas fa-sign-in-alt"></i></a>
+            <div className="f6 link dim ba ph3 pv2 mb2 mt2 dib blue pointer" onClick={handleClick}><i className="fas fa-sign-in-alt"></i></div>
             {/* <a className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib" onClick={handleClick}><i className="fas fa-sign-in-alt"></i></a> */}
           </div>
           <NavLink
-                    className="f6 fw4 hover-pink no-underline black-70 dn dib-ns pv2"
-                    activeClassName="pink"
+                    className="f6 fw4 hover-blue no-underline black-70 dn dib-ns pv2"
+                    activeClassName="blue"
                     exact={true}
                     to="/signup"
                     title="signup">

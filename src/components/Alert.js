@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 
 //return array of 2 hex colours for alert box depending on 'type'
 function getColour(type: "success" | "info" | "error") : Array<string> { //<- example of flow type checking
+>>>>>>> master
   switch (type) {
     case "success" : return ["black", "aquamarine"];
     case "info" : return ["white", "blue"];

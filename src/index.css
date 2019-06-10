@@ -25,7 +25,7 @@ body .error .close .fa-times {
 
 body .error-msg {
   font-size: 10px;
-  overflow: -webkit-paged-x;
+  word-break: break-all;
 }
 
 code {

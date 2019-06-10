@@ -32,9 +32,13 @@ const App = () => {
                      content } }`,
   });
 
+  // const [me] = useQuery({
+  //   query: `{ me { name } }`,
+  // });
+
   const { fetching, data, error } = result;
 
-  if(error)
+  if(error)    
     return <Alert message={error}/>;
 
   return fetching ? <Loading/> : <> 

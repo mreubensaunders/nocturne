@@ -4,12 +4,13 @@ my react starter project w/ everything i need (urql, flow, animejs, react-router
 
 ### Functionality
 
-This is a frontend for: [graphql cli advanced backend](https://github.com/graphql-boilerplates/node-graphql-server/tree/master/advanced)
->Home page fetches basic data from server
->Login page calls server 'login' mutation and stores a JWT token in Redux
->SignUp page creates a new user
+This is a React frontend for: [graphql cli advanced backend](https://github.com/graphql-boilerplates/node-graphql-server/tree/master/advanced)
 
 The graphql-cli has a client side for this in Vue.js but there isn't one for React, so I made one.
+
+* Home page fetches basic data from server (feed query)
+* Login page calls 'login' mutation and stores a JWT token in Redux
+* SignUp page creates a new user
 
 ### Installing
 

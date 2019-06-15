@@ -1,9 +1,11 @@
 //@flow
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import { useMutation } from 'urql';
 import Loading from './Loading';
 import Alert from './Alert';
-import { useStateValue  } from '../AppState';
+
+import { useSelector, useDispatch } from 'react-redux';
+
 import {
   NavLink,
   Redirect
@@ -16,10 +18,10 @@ mutation($email: String!, $password: String!) {
   }
 }`;
 
-
 const Login = () => {
   
-  const [{ token }, dispatch] = useStateValue();
+  const dispatch = useDispatch();
+  //const { token } = useSelector();
 
   const [res, executeMutation] = useMutation(LoginQuery);
   const [success, setSuccess] = useState(false);
@@ -35,7 +37,7 @@ const Login = () => {
       const jwtToken = response.login.token;
       setSuccess(true)
       dispatch({
-                type: 'setToken',
+                type: 'SET_JWT_TOKEN',
                 newToken: jwtToken
               })
       console.log('jwt: ' + jwtToken)      

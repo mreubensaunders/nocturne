@@ -1,8 +1,18 @@
 # nocturne 🌘
 
-my react starter project w/ everything i need (urql, flow, animejs, react-router)
+my react starter project w/ everything i need (urql, flow, animejs, react-router, react-redux)
 
-using hooks & apicontext for state management (see AppState.js)
+### Functionality
+
+*Required GraphQL server below for full functionality*
+
+This is a React frontend for: [graphql cli advanced backend](https://github.com/graphql-boilerplates/node-graphql-server/tree/master/advanced)
+
+The graphql-cli has a client side for this in Vue.js but there isn't one for React, so I made one.
+
+* Home page fetches basic data from server (feed query)
+* Login page calls 'login' mutation and stores a JWT token in Redux
+* SignUp page creates a new user
 
 ### Installing
 
@@ -45,6 +55,7 @@ yarn flow stop
 * [anime.js](https://animejs.com/) - javascript animation engine
 * [flow](https://flow.org/) - javascript type checker
 * [tachyons](https://tachyons.io/) - lightweight/responsive css library
+* [redux]('https://react-redux.js.org/') - state management
 
 ## Authors
 

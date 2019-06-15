@@ -1,5 +1,6 @@
 // @flow
 import React from 'react';
+import { useSelector, useStore } from 'react-redux';
 import Loading from './components/Loading.js';
 import Alert from './components/Alert.js';
 
@@ -14,7 +15,7 @@ const List = ({data}) : Object => {
             data.map(post => (
               <li className="lh-copy pv3 ba bl-0 bt-0 br-0 b--dotted b--black-30" key={post.id}>{post.title}
               <br></br>
-              <a href={post.content}>{post.content}</a>
+              <a href={post.content}>{post.content}</a>              
               </li>
             ))}
       </ul>
@@ -24,7 +25,9 @@ const List = ({data}) : Object => {
 
 const App = () => {
 
-  const [{ token }] = useStateValue();
+  const store = useStore();
+
+  const { token } = store.getState();  
 
   const [result] = useQuery({
     query: `{ feed { id
@@ -44,6 +47,6 @@ const App = () => {
   return fetching ? <Loading/> : <> 
                     { token != null && <Alert message={{message: 'JWT Token: ' + token}} type="success"/> } 
                     <List data={data.feed}/> </>;
-};
+}
 
 export default App;

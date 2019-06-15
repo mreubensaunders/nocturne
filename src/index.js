@@ -1,32 +1,36 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import { Provider }  from 'react-redux';
+import { createStore } from 'redux';
+import { Provider as UrqlProvider, createClient } from 'urql'; //graphql client
+
 import App from './App';
 import Login from './components/Login';
 import SignUp from './components/SignUp';
 import Nav from './components/Nav';
-//import * as serviceWorker from './serviceWorker';
+
 import {
     BrowserRouter as Router,
     Route,
     Switch,
   } from 'react-router-dom'
-import 'tachyons';
 
-import { Provider, createClient } from 'urql';
-import { StateProvider, useStateValue } from './AppState';
+import 'tachyons';
+import './index.css';
+
+//import { StateProvider } from './AppState';
 
 const client = createClient({
   url: 'http://localhost:4000/', // Your GraphQL endpoint here
 });
 
-const initialState = {
-    token: null
-};
+// const initialState = {
+//      token: ""
+//  };
   
-const reducer = (state, action) => {
+const reducer = (state = {}, action) => {
     switch (action.type) {
-        case 'setToken':
+        case 'SET_JWT_TOKEN':
         return {
             ...state,
             token: action.newToken
@@ -35,23 +39,19 @@ const reducer = (state, action) => {
         default:
         return state;
     }
-};  
+};
 
-ReactDOM.render(<StateProvider initialState={initialState} reducer={reducer}> 
-                    <Provider value={client}>
+const store = createStore(reducer);
+
+ReactDOM.render(<Provider store={store}>
+                    <UrqlProvider value={client}>
                     <Router>                      
-                    <Nav/>
-                    
+                    <Nav/>                    
                     <Switch>
                         <Route exact path="/" component={App} />
                         <Route exact path="/login" component={Login} />
                         <Route exact path="/signup" component={SignUp} />
                     </Switch>
                     </Router>
-                    </Provider>
-                </StateProvider>, document.getElementById('root'));
-
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-//serviceWorker.unregister();
+                    </UrqlProvider>                    
+                </Provider>, document.getElementById('root'));

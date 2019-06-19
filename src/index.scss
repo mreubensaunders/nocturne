@@ -8,6 +8,9 @@ $mid: rgb(138, 138, 138);
 $pink: #ffebf6;
 $uni-br: 0.3em;
 
+$primary: #8274ff;
+$primary-fade: rgba(130, 116, 255, 0.294);
+
 $danger: #fd5750;
 $success: #2cb673;
 
@@ -39,6 +42,20 @@ body {
         word-break: break-all;
       }
   }
+  .nav-button{
+    font-size: 13px;
+    text-decoration: none;
+    font-weight: 700;
+    color: white;
+    
+  }
+  .prime{
+    background-color: $primary !important;
+    &:hover{
+      transition: 100ms ease-in-out;
+      background-color: $primary-fade !important;
+    }
+  }
   .curvy{
     -webkit-box-flex: 1;
     flex-grow: 1;
@@ -51,14 +68,33 @@ body {
     height: 100%;
     box-shadow: rgba(8, 35, 51, 0.03) 0px 0px 1px, rgba(8, 35, 51, 0.05) 0px 2px 2px;   
   }
+  .curvy-light{
+    -webkit-box-flex: 1;
+    flex-grow: 1;
+    flex-basis: auto;
+    padding: 1em;
+    overflow: auto;
+    border-radius: 8px;
+    background: rgb(239, 243, 245);    
+    width: 100%; 
+    height: 100%;
+    box-shadow: rgba(8, 35, 51, 0.03) 0px 0px 1px, rgba(8, 35, 51, 0.05) 0px 1px 1px;   
+  }
   .wishlist{
     height: 100%;
     width: 100%;    
     position: relative;
     display: block;
     .request{
-      margin-right: -1px;
-      margin-bottom: 2em;
+      .title{
+        text-align: center;
+        color: $mid;
+        font-size: 18px;
+        padding: .6em;
+
+      }
+      padding: 0.6em;     
+      margin-bottom: 1.2em;
       -webkit-box-flex: 1;
       flex-grow: 1;
       flex-basis: auto;
@@ -74,8 +110,9 @@ body {
       min-height: 12vh;
       .details{
         font-size: 8px;
-        padding: 2em;        
+        
         color: $mid;        
+        text-align: center;
         font-size: 11px !important;
         line-height: 1.574 !important;
         direction: ltr !important;
@@ -87,7 +124,7 @@ body {
         position: absolute;
         bottom: -.5em;
         left: -.5em;
-        background-color: #8274ff4b;
+        background-color: rgba(130, 116, 255, 0.294);
         border-radius: .2em;
         display: block;         
         min-width: 20px;

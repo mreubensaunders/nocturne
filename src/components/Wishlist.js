@@ -3,6 +3,8 @@ import React from 'react';
 const Wishlist = () : Object => {
   return(
     <div className="pa3 pa5-ns">
+    <div className="list pl0 measure center wishlist curvy"></div>
+    
       <ul className="list pl0 measure center wishlist curvy">
         <li className="request">       
           <div className="controls">
@@ -10,9 +12,7 @@ const Wishlist = () : Object => {
             <div className="button"></div>
             
           </div> 
-          <div className="details">
-          Here are some details
-          </div>
+          
           <div className="vote-container">    
           <div className="v-button"><i class="fas fa-chevron-up"></i></div>
           <div className="v-button"><i class="fas fa-chevron-down"></i></div>            
@@ -22,6 +22,10 @@ const Wishlist = () : Object => {
           <div className="controls">    
             <div className="button expand"></div>
             <div className="button"></div>
+          </div>
+          <div className="title">Need some milk! 🥛🥛🥛</div>
+          <div className="details">
+          We ran out :(
           </div>
           <div className="vote-container">    
           <div className="v-button"><i class="fas fa-chevron-up"></i></div>

@@ -7,6 +7,7 @@ import { Provider as UrqlProvider, createClient } from 'urql'; //graphql client
 import App from './App';
 import Login from './components/Login';
 import SignUp from './components/SignUp';
+import Wishlist from './components/Wishlist';
 import Nav from './components/Nav';
 
 import {
@@ -49,6 +50,7 @@ ReactDOM.render(<Provider store={store}>
                     <Nav/>                    
                     <Switch>
                         <Route exact path="/" component={App} />
+                        <Route exact path="/wishlist" component={Wishlist} />
                         <Route exact path="/login" component={Login} />
                         <Route exact path="/signup" component={SignUp} />
                     </Switch>

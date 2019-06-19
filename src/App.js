@@ -4,13 +4,14 @@ import { useSelector, useStore } from 'react-redux';
 import Loading from './components/Loading.js';
 import Alert from './components/Alert.js';
 
-import { useStateValue } from './AppState.js';
+//import { useStateValue } from './AppState.js';
 import { useQuery } from 'urql';
 
 const List = ({data}) : Object => {
   return(
     <div className="pa3 pa5-ns">
       <ul className="list pl0 measure center">
+     
       {data &&
             data.map(post => (
               <li className="lh-copy pv3 ba bl-0 bt-0 br-0 b--dotted b--black-30" key={post.id}>{post.title}
@@ -45,6 +46,9 @@ const App = () => {
     return <Alert message={error}/>;
 
   return fetching ? <Loading/> : <> 
+              <div className="request"></div>
+                  <div className="request"></div>
+                  <div className="request"></div>
                     { token != null && <Alert message={{message: 'JWT Token: ' + token}} type="success"/> } 
                     <List data={data.feed}/> </>;
 }

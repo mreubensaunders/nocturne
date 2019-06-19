@@ -2,7 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider }  from 'react-redux';
 import { createStore } from 'redux';
-import { Provider as UrqlProvider, createClient } from 'urql'; //graphql client
+import { SubscriptionClient } from 'subscriptions-transport-ws';
+import {
+  cacheExchange,
+  createClient,
+  debugExchange,
+  fetchExchange,
+  Provider as UrqlProvider,
+  subscriptionExchange,
+} from 'urql';
 
 import App from './App';
 import Login from './components/Login';
@@ -19,10 +27,22 @@ import {
 import 'tachyons';
 import './index.css';
 
+const subscriptionClient = new SubscriptionClient(
+  'ws://localhost:4001',
+  {}
+);
 //import { StateProvider } from './AppState';
 
 const client = createClient({
-  url: 'http://localhost:4000/', // Your GraphQL endpoint here
+  url: 'http://localhost:4000',
+  exchanges: [
+    debugExchange,
+    cacheExchange,
+    fetchExchange,
+    subscriptionExchange({
+      forwardSubscription: operation => subscriptionClient.request(operation),
+    }),
+  ],
 });
 
 // const initialState = {

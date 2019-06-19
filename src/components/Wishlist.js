@@ -3,7 +3,11 @@ import React from 'react';
 const Wishlist = () : Object => {
   return(
     <div className="pa3 pa5-ns">
-    <div className="list pl0 measure center wishlist curvy"></div>
+    <div className="list pl0 measure center rs-container">
+      <input className="wish-input" placeholder="type your wish here..."/>
+      <div className="input-btn prime"><i class="far fa-paper-plane"></i></div>
+    </div>
+    
     
       <ul className="list pl0 measure center wishlist curvy">
         <li className="request">       

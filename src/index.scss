@@ -1,8 +1,19 @@
 //#fd5750 - red
 //#2cb673 - green
+$bg: white;
+
+$light: #f4f4f4;
+$mid: rgb(138, 138, 138);
+
+$pink: #ffebf6;
+$uni-br: 0.3em;
+
+$danger: #fd5750;
+$success: #2cb673;
 
 body {
     margin: 0;
+    background-color:$bg;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif !important;
@@ -27,6 +38,119 @@ body {
         font-size: 10px;
         word-break: break-all;
       }
+  }
+  .curvy{
+    -webkit-box-flex: 1;
+    flex-grow: 1;
+    flex-basis: auto;
+    padding: 2em;
+    overflow: auto;
+    border-radius: 8px;
+    background: rgb(239, 243, 245);    
+    width: 100%; 
+    height: 100%;
+    box-shadow: rgba(8, 35, 51, 0.03) 0px 0px 1px, rgba(8, 35, 51, 0.05) 0px 2px 2px;   
+  }
+  .wishlist{
+    height: 100%;
+    width: 100%;    
+    position: relative;
+    display: block;
+    .request{
+      margin-right: -1px;
+      margin-bottom: 2em;
+      -webkit-box-flex: 1;
+      flex-grow: 1;
+      flex-basis: auto;
+      height: 100%;
+      width: 100%;
+      max-height: 298px;
+      position: relative;
+      //overflow: auto;
+      border-radius: 8px;
+      background:$bg;  
+      width: 100%; 
+      box-shadow: rgba(8, 35, 51, 0.03) 0px 0px 2px, rgba(8, 35, 51, 0.05) 0px 3px 6px;    
+      min-height: 12vh;
+      .details{
+        font-size: 8px;
+        padding: 2em;        
+        color: $mid;        
+        font-size: 11px !important;
+        line-height: 1.574 !important;
+        direction: ltr !important;
+        white-space: pre !important;
+        word-spacing: normal !important;
+        word-break: normal !important;
+      }
+      .vote-container{
+        position: absolute;
+        bottom: -.5em;
+        left: -.5em;
+        background-color: #8274ff4b;
+        border-radius: .2em;
+        display: block;         
+        min-width: 20px;
+        text-align: center;
+        &:hover{
+          background-color: #8274ff;
+          transition: 50ms ease-in;
+        }
+        // .upvote{
+        //   cursor: pointer;
+        //   color: white;
+        //   font-size: .2em;
+        //   height: 50%;
+        // }
+        // .downvote{
+        //   cursor: pointer;
+        //   color: white;
+        //   height: 50%;
+        //   font-size: .2em;
+        // }
+      }
+      .controls{
+        position: absolute;
+        top: .3em;
+        right: .3em;
+        background-color: #e7e7e7;
+        border-radius: 1em;
+        display: inline-flex;
+        padding: .2em;      
+        .close{
+          background-color: $danger !important;
+        }
+        .expand{
+          background-color: $success !important;
+        }
+      }
+      .button{
+        cursor: pointer;
+        border-radius: 2em;
+        margin: .1em;
+        padding: .1em;
+        display: inline-flex;
+        height: .5em;
+        width: .5em; 
+        background-color: white;
+        &:hover{
+          color: multiply;
+        }
+      }   
+      .v-button{
+        cursor: pointer;
+        width: 100%;        
+        display: block;
+        padding: .2em;
+        height: 50%;        
+        color: white;
+        font-size: .6em;
+        &:hover{
+          color: rgb(75, 75, 75);
+          transition: 50ms ease-in;
+        }
+      }
+    }
   }
   
   code {

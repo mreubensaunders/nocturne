@@ -4,6 +4,7 @@ $bg: white;
 
 $light: #f4f4f4;
 $mid: rgb(138, 138, 138);
+$dark: rgb(75, 75, 75);
 
 $pink: #ffebf6;
 $uni-br: 0.3em;
@@ -87,11 +88,12 @@ body {
         position: absolute;
         bottom: -.5em;
         left: -.5em;
-        background-color: #8274ff4b;
+        background-color: rgba(130, 116, 255, 0.294);
         border-radius: .2em;
         display: block;         
         min-width: 20px;
         text-align: center;
+        max-height: 30px;
         &:hover{
           background-color: #8274ff;
           transition: 50ms ease-in;
@@ -146,7 +148,7 @@ body {
         color: white;
         font-size: .6em;
         &:hover{
-          color: rgb(75, 75, 75);
+          color: $dark;
           transition: 50ms ease-in;
         }
       }

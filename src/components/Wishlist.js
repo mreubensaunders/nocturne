@@ -1,4 +1,5 @@
 import React from 'react';
+import Upvote from './Upvote';
 
 const Wishlist = () : Object => {
   return(
@@ -13,31 +14,21 @@ const Wishlist = () : Object => {
           <div className="details">
           Here are some details
           </div>
-          <div className="vote-container">    
-          <div className="v-button"><i class="fas fa-chevron-up"></i></div>
-          <div className="v-button"><i class="fas fa-chevron-down"></i></div>            
-        </div>
+          <Upvote key={1} />
         </li>
         <li className="request">    
           <div className="controls">    
             <div className="button expand"></div>
             <div className="button"></div>
-          </div>
-          <div className="vote-container">    
-          <div className="v-button"><i class="fas fa-chevron-up"></i></div>
-          <div className="v-button"><i class="fas fa-chevron-down"></i></div>            
-        </div>
+          </div>          
+          <Upvote key={1} />
         </li>
         <li className="request">        
         <div className="controls">    
             <div className="button expand"></div>
             <div className="button close"></div>
             <div className="button"></div>
-        </div>        
-        <div className="vote-container">    
-          <div className="v-button"><i class="fas fa-chevron-up"></i></div>
-          <div className="v-button"><i class="fas fa-chevron-down"></i></div>            
-        </div>
+        </div>                
         </li>
         <li className="request">     
           <div className="controls">                   

@@ -88,11 +88,12 @@ body .error-msg {
   position: absolute;
   bottom: -.5em;
   left: -.5em;
-  background-color: #8274ff4b;
+  background-color: rgba(130, 116, 255, 0.294);
   border-radius: .2em;
   display: block;
   min-width: 20px;
   text-align: center;
+  max-height: 30px;
 }
 
 .wishlist .request .vote-container:hover {

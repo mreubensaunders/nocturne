@@ -49,20 +49,20 @@ const Login = () => {
 
   return (    
     <form className="pa3 pa5-ns">
-      {res.fetching ? <Loading/> : <span>{log(res.data)}</span>}
-      <div className="pl0 measure center">
-        <label className="f6 b db mb2"><span className="normal black-60">username</span></label>
-        <input id="email" className="input-reset ba b--black-20 pa2 mb2 db w-100" type="text" 
+      {res.fetching ? <Loading/> : <span>{log(res.data)}</span>}      
+      
+      <div className="pl0 measure center">        
+        <input className="wish-input rs-text mg-1" placeholder="username..."
+        type="text" 
         value={_email}
         onChange={e => setEmail(e.target.value)}
-        aria-describedby="name-desc"/>
-          <label className="f6 b db mb2"><span className="normal black-60">password</span></label>
-        <input id="password" className="input-reset ba b--black-20 pa2 mb2 db w-100" type="password" 
+        aria-describedby="name-desc"/>                  
+        <input id="password" className="wish-input rs-text mg-1" type="password"  placeholder="password..."
         value={_password}
         onChange={e => setPassword(e.target.value)}
         aria-describedby="name-desc"/>
         <div className="">
-            <div className="f6 link dim ba ph3 pv2 mb2 mt2 dib blue pointer" onClick={handleClick}><i className="fas fa-sign-in-alt"></i></div>
+            <div className="input-btn-bg prime" onClick={handleClick}><i className="fas fa-sign-in-alt"></i></div>            
             {/* <a className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib" onClick={handleClick}><i className="fas fa-sign-in-alt"></i></a> */}
           </div>
           <NavLink

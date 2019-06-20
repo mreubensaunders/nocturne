@@ -13,8 +13,9 @@ const Upvote = () => {
         translateY: {
             value: tran,
             duration: 400,
-            easing: 'easeInOutExpo'                
+            easing: 'easeInOutExpo'
         },
+        backgroundColor: 'green',
         opacity: [100, 20],
         delay: 250 // All properties except 'scale' inherit 250ms delay
         });        

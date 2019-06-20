@@ -2,7 +2,7 @@ import React from 'react';
 
 const WishContent = ({title, details}) => {
 
-    const maxTextLength = 64;
+    const maxTextLength = 240;
 
     const isUrl = (text) => {
         return text.substring(0, 4) == 'http';

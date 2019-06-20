@@ -11,6 +11,7 @@ export default function Loading() {
             width: '100%', // -> from '0px' to '100%',
             easing: 'easeInOutQuad',
             direction: '',
+            opacity: [10, 60],
             loop: true
         })
     })
@@ -23,7 +24,7 @@ export default function Loading() {
         height: 2,
         width: 0,
         letterSpacing: '0.2em',
-        backgroundColor: "#2cb673",
+        backgroundColor: "#8274ff",
         display: 'block'                 
     }
 

@@ -44,7 +44,7 @@ body {
       }
   }
   .rs-text{
-    letter-spacing: 1px;
+    letter-spacing: 1px;    
   }
   .nav-button{
     font-size: 13px;
@@ -89,7 +89,8 @@ body {
     box-shadow: rgba(8, 35, 51, 0.03) 0px 0px 1px, rgba(8, 35, 51, 0.05) 0px 1px 1px;   
   }
   .wish-input{
-    
+    line-height: 1;
+    font-weight: 700;    
     padding: 0.8em;     
     border-radius: 1em;
     background-color:white;
@@ -100,8 +101,12 @@ body {
     border-style: none; 
     box-shadow: rgba(8, 35, 51, 0.03) 1px 1px 2px, rgba(8, 35, 51, 0.05) 1px 3px 6px;        
   }
+  .mg-1{
+    margin: 1em !important;
+  }
   .wish-input::placeholder{
-    color: $mid;
+    font-weight: 700;    
+    color: $primary-fade;
     font-size: 12px;
     letter-spacing: .08em;
   }
@@ -115,6 +120,18 @@ body {
     width: 2em;
     box-shadow: rgba(8, 35, 51, 0.03) 1px 1px 2px, rgba(8, 35, 51, 0.05) 1px 3px 6px;         
   }
+  .input-btn-bg{
+    cursor: pointer;
+    padding: .8em;
+    text-align: center;
+    font-size: 14px;
+    border-radius: .3em;
+    margin: 1em;
+    width: 3em;
+    height: 3em;
+    box-shadow: rgba(8, 35, 51, 0.03) 1px 1px 2px, rgba(8, 35, 51, 0.05) 1px 3px 6px;         
+  }
+  
   .wishlist{
     height: 100%;
     width: 100%;    
@@ -149,8 +166,7 @@ body {
         text-align: center;
         font-size: 11px !important;
         line-height: 1.574 !important;
-        direction: ltr !important;
-        white-space: pre !important;
+        direction: ltr !important;        
         word-spacing: normal !important;
         word-break: normal !important;
       }

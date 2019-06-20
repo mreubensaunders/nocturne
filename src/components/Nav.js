@@ -15,7 +15,7 @@ export default function Nav() {
                     Hello
                 </NavLink>
                 <NavLink
-                    className="f6 fw4 hover-blue no-underline black-70 dib ml2 pv2 ph3 ba"
+                    className="nav-button prime curvy-light"
                     activeClassName="blue"
                     exact={true}
                     to="/login"

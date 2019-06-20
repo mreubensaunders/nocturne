@@ -3,6 +3,7 @@ import React from 'react';
 import { useSelector, useStore } from 'react-redux';
 import Loading from './components/Loading.js';
 import Alert from './components/Alert.js';
+import Wishlist from './components/Wishlist.js';
 
 //import { useStateValue } from './AppState.js';
 import { useQuery } from 'urql';
@@ -46,11 +47,8 @@ const App = () => {
     return <Alert message={error}/>;
 
   return fetching ? <Loading/> : <> 
-              <div className="request"></div>
-                  <div className="request"></div>
-                  <div className="request"></div>
                     { token != null && <Alert message={{message: 'JWT Token: ' + token}} type="success"/> } 
-                    <List data={data.feed}/> </>;
+                    <Wishlist data={data.feed}/> </>;
 }
 
 export default App;

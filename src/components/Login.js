@@ -52,11 +52,13 @@ const Login = () => {
       {res.fetching ? <Loading/> : <span>{log(res.data)}</span>}      
       
       <div className="pl0 measure center">        
+      <span className="sm-text text-left rs-text">username</span>
         <input className="wish-input rs-text mg-1" placeholder="username..."
         type="text" 
         value={_email}
         onChange={e => setEmail(e.target.value)}
         aria-describedby="name-desc"/>                  
+        <span className="sm-text text-left rs-text">password</span>
         <input id="password" className="wish-input rs-text mg-1" type="password"  placeholder="password..."
         value={_password}
         onChange={e => setPassword(e.target.value)}
@@ -65,14 +67,17 @@ const Login = () => {
             <div className="input-btn-bg prime" onClick={handleClick}><i className="fas fa-sign-in-alt"></i></div>            
             {/* <a className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib" onClick={handleClick}><i className="fas fa-sign-in-alt"></i></a> */}
           </div>
-          <NavLink
-                    className="f6 fw4 hover-blue no-underline black-70 dn dib-ns pv2"
+          <span className="sm-text text-centre rs-text">Don't have an account?   <br/>
+                <NavLink
+                    className="f6 fw4 hover-blue no-underline black-70 dn dib-ns pv2 lnk"
                     activeClassName="blue"
                     exact={true}
                     to="/signup"
                     title="signup">
-                    Sign Up
+                    Sign up
                 </NavLink>
+                </span>
+                
                 {res.error && <Alert message={res.error}/>}
         {/* <small id="name-desc" className="f6 red db mb2">{res.error && '' + res.error}</small> */}
       </div>

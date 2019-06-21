@@ -12,7 +12,7 @@ export default function Nav() {
                     exact={true}
                     to="/"
                     title="home">
-                    Hello
+                    Feed
                 </NavLink>
                 <NavLink
                     className="nav-button prime curvy-light"
@@ -20,9 +20,9 @@ export default function Nav() {
                     exact={true}
                     to="/login"
                     title="login">
-                    Sign In
-                </NavLink> 
+                    Sign in
+                </NavLink>
               </div>
-            </nav> 
+            </nav>
     )
 }

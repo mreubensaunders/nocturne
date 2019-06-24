@@ -13,6 +13,7 @@ $primary: #8274ff;
 $primary-fade: rgba(130, 116, 255, 0.294);
 
 $danger: #fd5750;
+$danger-fade: #ffc5c3;
 $success: #2cb673;
 
 body {
@@ -35,6 +36,10 @@ body {
             .fa-times{
               color: white;
               font-size: 2em;
+              &:hover{
+                transition: 100ms ease-in;
+                color: $danger-fade;
+              }
             }    
         }        
       }

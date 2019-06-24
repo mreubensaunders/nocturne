@@ -24,6 +24,11 @@ body .error .close .fa-times {
   font-size: 2em;
 }
 
+body .error .close .fa-times:hover {
+  transition: 100ms ease-in;
+  color: #ffc5c3;
+}
+
 body .error-msg {
   font-size: 10px;
   word-break: break-all;

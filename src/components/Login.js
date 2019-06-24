@@ -53,13 +53,13 @@ const Login = () => {
       
       <div className="pl0 measure center">        
       <span className="sm-text text-left rs-text">username</span>
-        <input className="wish-input rs-text mg-1" placeholder="username..."
+        <input className="wish-input rs-text mg-1" placeholder="absolute@unit.com"
         type="text" 
         value={_email}
         onChange={e => setEmail(e.target.value)}
         aria-describedby="name-desc"/>                  
         <span className="sm-text text-left rs-text">password</span>
-        <input id="password" className="wish-input rs-text mg-1" type="password"  placeholder="password..."
+        <input id="password" className="wish-input rs-text mg-1" type="password"  placeholder="**********"
         value={_password}
         onChange={e => setPassword(e.target.value)}
         aria-describedby="name-desc"/>

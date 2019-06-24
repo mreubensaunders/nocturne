@@ -20,7 +20,7 @@ export default function Alert(message : Object) {
     const colour = getColour(message.type);
 
     return(        
-        <div hidden={hide} className="pl0 measure center">
+        <div hidden={hide} className="pl0 measure center mt3">
             <div className="flex items-center justify-center pa4 error relative curvy" style={{backgroundColor: colour[1]}}>     
                 <div className="close" onClick={() => {setHide(true)}}><i className="fas fa-times"/></div>
                 <title>error</title>                    

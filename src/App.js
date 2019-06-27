@@ -5,6 +5,9 @@ import Loading from './components/Loading.js';
 import Alert from './components/Alert.js';
 import Wishlist from './components/Wishlist.js';
 
+import Form from './components/Form.js';
+import FormHooks from './components/FormHooks.js';
+
 //import { useStateValue } from './AppState.js';
 import { useQuery } from 'urql';
 
@@ -26,29 +29,33 @@ const List = ({data}) : Object => {
 }
 
 const App = () => {
-
-  const store = useStore();
-
-  const { token } = store.getState();  
-
-  const [result] = useQuery({
-    query: `{ feed { id
-                     title
-                     content } }`,
-  });
-
-  // const [me] = useQuery({
-  //   query: `{ me { name } }`,
-  // });
-
-  const { fetching, data, error } = result;
-
-  if(error)    
-    return <Alert message={error}/>;
-
-  return fetching ? <Loading/> : <> 
-                    { token != null && <Alert message={{message: 'JWT Token: ' + token}} type="success"/> } 
-                    <Wishlist data={data.feed}/> </>;
+  return <FormHooks/>
 }
+
+// const App = () => {
+
+//   const store = useStore();
+
+//   const { token } = store.getState();  
+
+//   const [result] = useQuery({
+//     query: `{ feed { id
+//                      title
+//                      content } }`,
+//   });
+
+//   // const [me] = useQuery({
+//   //   query: `{ me { name } }`,
+//   // });
+
+//   const { fetching, data, error } = result;
+
+//   if(error)    
+//     return <Alert message={error}/>;
+
+//   return fetching ? <Loading/> : <> 
+//                     { token != null && <Alert message={{message: 'Hello, nerd.'}} type="success"/> } 
+//                     <Wishlist data={data.feed}/> </>;
+// }
 
 export default App;

@@ -5,7 +5,7 @@ import React, { useState } from 'react';
 function getColour(type: "success" | "info" | "error") : Array<string> { //<- example of flow type checking
   switch (type) {
     case "success" : return ["white", "#2cb673"];
-    case "info" : return ["white", "blue"];
+    case "info" : return ["white", "#8fbaff"];
     case "error" : return ["white", "#fd5750"];
     default: return ["white", "#fd5750"]; // incase graphql error has no type. i.e Network errors
   }
@@ -13,9 +13,7 @@ function getColour(type: "success" | "info" | "error") : Array<string> { //<- ex
 
 export default function Alert(message : Object) {
 
-    const [hide, setHide] = useState(false);    
-    
-    console.log(message);
+    const [hide, setHide] = useState(false);
     
     const colour = getColour(message.type);
 

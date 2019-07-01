@@ -22,7 +22,6 @@ const FormHooks = () => {
           return false;
         }
       }
-
       return true;
     };
 
@@ -55,7 +54,7 @@ const FormHooks = () => {
         
       </div>
       {valid === true && <Alert message={{message: 'Success!'}} type="success"/>}
-      {valid === false && <Alert message={{message: 'Failure!'}} type="danger"/>}
+      {valid === false && <Alert message={{message: 'Failure!'}} type="error"/>}}
       </>
     );
   };

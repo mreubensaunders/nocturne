@@ -67,7 +67,7 @@ const store = createStore(reducer);
 ReactDOM.render(<Provider store={store}>
                     <UrqlProvider value={client}>
                     <Router>                      
-                    {/*<Nav/>                    */}
+                    <Nav/>                    
                     <Switch>
                         <Route exact path="/" component={App} />
                         <Route exact path="/wishlist" component={Wishlist} />

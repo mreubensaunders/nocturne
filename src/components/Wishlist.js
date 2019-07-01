@@ -31,8 +31,20 @@ const Wishlist = ({data}) : Object => {
   const [appear, setAppear] = useState(true);    
 
   const handlePost = () => {
-    postMutation(form)
+    if(validateForm())    
+      postMutation(form)    
   }
+
+  const validateForm = () => {        
+    let formArray = [...Object.values(form)];
+
+      for ( let i = 0; i < formArray.length; i++ ) {      
+        if (!formArray[i].length) {
+          return false;
+        }
+      }
+      return true;
+    };
 
   return(
     <div className="pa3 pa5-ns">

@@ -29,33 +29,29 @@ const List = ({data}) : Object => {
 }
 
 const App = () => {
-  return <FormHooks/>
+
+  const store = useStore();
+
+  const { token } = store.getState();  
+
+  const [result] = useQuery({
+    query: `{ feed { id
+                     title
+                     content } }`,
+  });
+
+  // const [me] = useQuery({
+  //   query: `{ me { name } }`,
+  // });
+
+  const { fetching, data, error } = result;
+
+  if(error)    
+    return <Alert message={error}/>;
+
+  return fetching ? <Loading/> : <> 
+                    { token != null && <Alert message={{message: 'Hello, nerd.'}} type="success"/> } 
+                    <Wishlist data={data.feed}/> </>;
 }
-
-// const App = () => {
-
-//   const store = useStore();
-
-//   const { token } = store.getState();  
-
-//   const [result] = useQuery({
-//     query: `{ feed { id
-//                      title
-//                      content } }`,
-//   });
-
-//   // const [me] = useQuery({
-//   //   query: `{ me { name } }`,
-//   // });
-
-//   const { fetching, data, error } = result;
-
-//   if(error)    
-//     return <Alert message={error}/>;
-
-//   return fetching ? <Loading/> : <> 
-//                     { token != null && <Alert message={{message: 'Hello, nerd.'}} type="success"/> } 
-//                     <Wishlist data={data.feed}/> </>;
-// }
 
 export default App;

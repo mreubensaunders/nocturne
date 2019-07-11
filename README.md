@@ -1,5 +1,7 @@
 # nocturne 🌘
 
+![demonstration](nocturne.gif)
+
 my react starter project w/ everything i need (urql, flow, animejs, react-router, react-redux)
 
 ### Functionality
